@@ -1,0 +1,82 @@
+package com.kisahtegar.mycalculator;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+
+public class MainActivity extends Activity {
+	
+	private EditText editText;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		
+		editText = (EditText)findViewById(R.id.etInputBox);
+
+        // Find all buttons
+		// Layer 1
+		final Button btnDoubleZero = (Button)findViewById(R.id.btnDoubleZero);
+		final Button btnZero = (Button)findViewById(R.id.btnZero);
+		final Button btnComma = (Button)findViewById(R.id.btnComma);
+		final Button btnEqual = (Button)findViewById(R.id.btnEqual);
+		
+		// Layer 2
+		final Button btnOne = (Button)findViewById(R.id.btnOne);
+		final Button btnTwo = (Button)findViewById(R.id.btnTwo);
+		final Button btnThree = (Button)findViewById(R.id.btnThree);
+		final Button btnPlus = (Button)findViewById(R.id.btnPlus);
+		
+		// Layer 3
+		final Button btnFour = (Button)findViewById(R.id.btnFour);
+		final Button btnFive = (Button)findViewById(R.id.btnFive);
+		final Button btnSix = (Button)findViewById(R.id.btnSix);
+		final Button btnMinus = (Button)findViewById(R.id.btnMinus);
+		
+		// Layer 4
+		final Button btn = (Button)findViewById(R.id.btn);
+		final Button btn = (Button)findViewById(R.id.btn);
+		final Button btn = (Button)findViewById(R.id.btn);
+		final Button btn = (Button)findViewById(R.id.btn);
+		
+		// Layer 5
+		final Button btn = (Button)findViewById(R.id.btn);
+		final Button btn = (Button)findViewById(R.id.btn);
+		final Button btn = (Button)findViewById(R.id.btn);
+		final Button btn = (Button)findViewById(R.id.btn);
+		
+		// Set OnClickListener for each button
+		btnDoubleZero.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				editText.append("00");
+			}
+		});
+		
+		btnZero.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				editText.append("0");
+			}
+		});
+		
+		btnComma.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				editText.append("");
+			}
+		});
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+}

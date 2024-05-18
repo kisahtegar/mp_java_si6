@@ -1,0 +1,39 @@
+package com.example.perulangan;
+
+import java.util.ArrayList;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+import android.widget.ListView;
+
+public class MainActivity extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		
+		// Daftar nama teman
+		String[] friendsArray = {"Putri", "Fitri", "Andi", "Dian"};
+		
+		// Using ArrayList for dynamic data manipulation
+		ArrayList<String> friendsList = new ArrayList<String>();
+		
+		// Using foreach to add elements to the ArrayList
+		for (String friend : friendsArray) {
+			friendList.add(friend);
+		}
+		
+		//
+		final ListView listView = (ListView)findViewById(R.id.listView);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+}
